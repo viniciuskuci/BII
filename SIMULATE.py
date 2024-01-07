@@ -10,8 +10,8 @@ class SIMULATION:
         self.run = False
         self.simulation_time = 1440
     
-    def schedule(self, event_name, event_value, window, 
-                    station_1, station_2, station_3, station_4, run_simulation, simulation_time):
+    def schedule(self, event_name, event_value, run_simulation, simulation_time, window, 
+                    station_1, station_2, station_3, station_4):
         
         if event_name == 'INIT':
             self.run = run_simulation
@@ -127,10 +127,10 @@ class SIMULATION:
         
 """
 a = SIMULATION()
-b = a.schedule('INIT', 0, 4, 0.25, 0.6, 0.32, 0.25, True, 1440)
-b = a.schedule('RUN', 0, 4, 0.25, 0.6, 0.32, 0.25, True, 1440)
-b = a.schedule('RUN', 0, 4, 0.25, 0.6, 0.32, 0.25, True, 1440)
-b = a.schedule('RUN', 0, 4, 0.25, 0.6, 0.32, 0.25, True, 1440)
-b = a.schedule('RUN', 0, 4, 0.25, 0.6, 0.32, 0.25, True, 1440)
+b = a.schedule('INIT', 0, True, 1440, 4, 0.25, 0.6, 0.32, 0.25)
+b = a.schedule('RUN', 0, True, 1440, 4, 0.25, 0.6, 0.32, 0.25)
+b = a.schedule('RUN', 0, True, 1440, 4, 0.25, 0.6, 0.32, 0.25)
+b = a.schedule('RUN', 0, True, 1440, 4, 0.25, 0.6, 0.32, 0.25)
+b = a.schedule('RUN', 0, True, 1440, 4, 0.25, 0.6, 0.32, 0.25)
 
 """
