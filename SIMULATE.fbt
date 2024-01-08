@@ -1,37 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE FBType SYSTEM "http://www.holobloc.com/xml/LibraryElement.dtd">
 <FBType Name="SIMULATE" OpcUa="SERVICE">
-    <InterfaceList>
-        <EventInputs>
-            <Event Name="INIT" Type="Event"/>
-              <With Var="RUN_SIM"/>
-              <With Var="SIM_TIME"/>
-            <Event Name="RUN" Type="Event" OpcUa="Method">
-              <With Var="WINDOW"/>
-              <With Var="STATION_1"/>
-              <With Var="STATION_2"/>
-              <With Var="STATION_3"/>
-              <With Var="STATION_4"/>
-              
-            </Event>
-        </EventInputs>
-        <EventOutputs>
-            <Event Name="INIT_O" Type="Event"/>
-            <Event Name="RUN_O" Type="Event">
-              <With Var="THROUGHPUT"/>
-            </Event>
-        </EventOutputs>
-        <InputVars>
-            <VarDeclaration Name="RUN_SIM" Type="BOOL" OpcUa="Constant.RUN"/>
-            <VarDeclaration Name="SIM_TIME" Type="INT" OpcUa="Variable.RUN"/>
-            <VarDeclaration Name="WINDOW" Type="INT" OpcUa="Constant.RUN"/>
-            <VarDeclaration Name="STATION_1" Type="REAL" OpcUa="Variable.RUN"/>
-            <VarDeclaration Name="STATION_2" Type="REAL" OpcUa="Constant.RUN"/>
-            <VarDeclaration Name="STATION_3" Type="REAL" OpcUa="Variable.RUN"/>
-            <VarDeclaration Name="STATION_4" Type="REAL" OpcUa="Variable.RUN"/>
-        </InputVars>
-        <OutputVars>
-            <VarDeclaration Name="THROUGHPUT" Type="REAL" OpcUa="Variable.RUN"/>
-        </OutputVars>
-    </InterfaceList>
+  <InterfaceList>
+    <EventInputs>
+      <Event Name="INIT" Type="Event">
+        <With Var="SIM_TIME"/>
+      </Event>
+      <Event Name="RUN" Type="Event" OpcUa="Method">
+        <With Var="WINDOW"/>
+        <With Var="STATION_1"/>
+        <With Var="STATION_2"/>
+        <With Var="STATION_3"/>
+        <With Var="STATION_4"/>
+      </Event>
+      <Event Name="RUN_SIM" Type="Event" OpcUa="Method">
+      </Event>
+    </EventInputs>
+    <EventOutputs>
+      <Event Name="INIT_O" Type="Event">
+      </Event>
+      <Event Name="RUN_O" Type="Event">
+      </Event>
+      <Event Name="RUN_SIM_O" Type="Event">
+        <With Var="THROUGHPUT"/>
+      </Event>
+    </EventOutputs>
+    <InputVars>
+      <VarDeclaration Name="SIM_TIME" Type="INT" OpcUa="Variable.RUN"/>
+      <VarDeclaration Name="WINDOW" Type="INT" OpcUa="Constant.RUN"/>
+      <VarDeclaration Name="STATION_1" Type="REAL" OpcUa="Variable.RUN"/>
+      <VarDeclaration Name="STATION_2" Type="REAL" OpcUa="Constant.RUN"/>
+      <VarDeclaration Name="STATION_3" Type="REAL" OpcUa="Variable.RUN"/>
+      <VarDeclaration Name="STATION_4" Type="REAL" OpcUa="Variable.RUN"/>
+    </InputVars>
+    <OutputVars>
+      <VarDeclaration Name="THROUGHPUT" Type="REAL" OpcUa="Variable.RUN"/>
+    </OutputVars>
+  </InterfaceList>
 </FBType>
